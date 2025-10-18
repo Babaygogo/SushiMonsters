@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SushiMonsters - Доставка смачних суші</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Sushi<span>Monsters</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#cart">Кошик</a></li>
+                <li><a href="#about">Про нас</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button id="login-btn">Увійти</button>
+            <button id="register-btn">Реєстрація</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero" id="home">
+            <h1>Смачні суші для справжніх монстрів</h1>
+            <p>Замовляйте улюблені сети з доставкою додому. Акції та знижки для постійних клієнтів!</p>
+            <a href="#menu" class="btn">Перейти до меню</a>
+        </section>
+
+        <section id="menu">
+            <h2 class="section-title">Наші сети</h2>
+            <div class="sushi-sets" id="sushi-sets-container">
+                <!-- Сети суші будуть додані через JavaScript -->
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">Про нас</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Ласкаво просимо до SushiMonsters!</h3>
+                    <p>Ми - команда ентузіастів, яка об'єднала любов до японської кухні та бажання дарувати задоволення нашим клієнтам. Наша історія почалася у 2015 році, коли ми відкрили перше невелике кафе у центрі міста.</p>
+                    
+                    <h4>Наша місія</h4>
+                    <p>Ми прагнемо робити якісні суші доступними для кожного, поєднуючи традиційні японські технології з сучасними смаковими уподобаннями.</p>
+                    
+                    <h4>Чому обирають нас?</h4>
+                    <ul>
+                        <li>Свіжі інгредієнти щодня</li>
+                        <li>Досвідчені шеф-кухарі з Японії</li>
+                        <li>Швидка доставка за 45 хвилин</li>
+                        <li>Система знижок для постійних клієнтів</li>
+                        <li>Екологічне пакування</li>
+                    </ul>
+                    
+                    <h4>Наші цінності</h4>
+                    <p>Ми віримо, що їжа повинна бути не лише смачною, але й корисною. Тому використовуємо лише натуральні продукти без шкідливих добавок.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Наша команда">
+                </div>
+            </div>
+            
+            <div class="advantages">
+                <div class="advantage-item">
+                    <div class="advantage-icon">🍣</div>
+                    <h4>Свіжі інгредієнти</h4>
+                    <p>Щодня отримуємо свіжі морепродукти та овочі</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">⏱️</div>
+                    <h4>Швидка доставка</h4>
+                    <p>Доставляємо замовлення за 45 хвилин у межах міста</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">👨‍🍳</div>
+                    <h4>Досвідчені кухарі</h4>
+                    <p>Наші шеф-кухарі навчалися мистецтву суш у Японії</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💰</div>
+                    <h4>Доступні ціни</h4>
+                    <p>Пропонуємо якісні суші за доступними цінами</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart">
+            <h2 class="section-title">Ваш кошик</h2>
+            <div class="cart-section">
+                <div class="cart-items" id="cart-items">
+                    <p class="empty-cart-message">Ваш кошик порожній</p>
+                </div>
+                <div class="cart-total" id="cart-total">Загальна сума: 0 грн</div>
+                <button class="checkout-btn" id="checkout-btn">Оформити замовлення</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Модальне вікно реєстрації -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-register">&times;</span>
+            <h2>Реєстрація</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-name">Ім'я</label>
+                    <input type="text" id="reg-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Пароль</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <button type="submit" class="form-submit">Зареєструватися</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальне вікно входу -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-login">&times;</span>
+            <h2>Вхід</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Пароль</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="form-submit">Увійти</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SushiMonsters</h3>
+                <p>Смачні суші для справжніх монстрів! Ми робимо якісну японську кухню доступною для кожного.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p>📞 +380 (12) 345-67-89</p>
+                <p>✉️ info@sushimonsters.ua</p>
+                <p>📍 вул. Сушова, 15, м. Київ</p>
+            </div>
+            <div class="footer-section">
+                <h3>Години роботи</h3>
+                <p>Пн-Пт: 10:00 - 22:00</p>
+                <p>Сб-Нд: 11:00 - 23:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SushiMonsters - Всі права захищені</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
